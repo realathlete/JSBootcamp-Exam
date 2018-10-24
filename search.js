@@ -56,7 +56,7 @@ function noArgumentFromConsole(checkArgv){
   }
 }
 
-// Check if app missing parameter and print a relevant message if not.
+// Check if app missing parameter and print a relevant message if one parameter is missing.
 function missingArgumentFromConsole(checkArgv){
   if (checkArgv==null){
     console.log("Please specify the file extension and the word to search after the search.js" + "\n" + "Type node search.js for more information");
