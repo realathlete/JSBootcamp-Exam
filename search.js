@@ -52,6 +52,15 @@ function getFilesInDirectory(dir, ext) {
 function noArgumentFromConsole(checkArgv){
   if (checkArgv==null){
     console.log("USAGE: node search [EXT] [TEXT]");
+    process.exit()
+  }
+}
+
+// Check if app missing parameter and print a relevant message if not.
+function missingArgumentFromConsole(checkArgv){
+  if (checkArgv==null){
+    console.log("Please specify the file extension and the word to search after the search.js" + "\n" + "Type node search.js for more information");
+    process.exit()
   }
 }
 
@@ -63,4 +72,5 @@ function checkIfStringFound(NumToCheck){
 }
 
 noArgumentFromConsole(process.argv[2]);
+missingArgumentFromConsole(process.argv[3]);
 searchFilesInDirectory("./", process.argv[3], "." + process.argv[2]);
